@@ -2,9 +2,10 @@ import React from 'react';
 
 function Header() {
   return (
-    <header style={headerStyle}>
-      <h1>To Do List</h1>
-    </header>
+    <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+      <i class="fas fa-check-square me-1"></i>
+      <span>To Do List</span>
+    </p>  
   );
 }
 

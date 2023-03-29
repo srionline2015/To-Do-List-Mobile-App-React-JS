@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class AddTodo extends Component {
   state = {
     title: '',
-    date: ''
+    date: '',
   };
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
@@ -19,28 +19,38 @@ export class AddTodo extends Component {
         onSubmit={this.onSubmit}
         style={{ display: 'flex', padding: '0 10px' }}
       >
-        <input
-          type="text"
-          name="title"
-          style={{ flex: '10', padding: '5px' }}
-          placeholder="Add Todo ..."
-          value={this.state.title}
-          onChange={this.onChange}
-        />
-        <input
-          type="date"
-          name="date"
-          style={{ flex: '10', padding: '5px' }}
-          placeholder="Add Date ..."
-          value={this.state.date}
-          onChange={this.onChange}
-        />
-        <input
-          type="submit"
-          className="btn"
-          style={{ flex: '1' }}
-          value="Submit"
-        />
+        <div class="pb-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-row align-items-center">
+                <input
+                  type="text"
+                  name="title"
+                  style={{ flex: '10', padding: '5px' }}
+                  placeholder="Add Todo ..."
+                  value={this.state.title}
+                  onChange={this.onChange}
+                />
+                <input
+                  type="date"
+                  name="date"
+                  style={{ flex: '10', padding: '5px' }}
+                  placeholder="Add Date ..."
+                  value={this.state.date}
+                  onChange={this.onChange}
+                />
+                <div>
+                  <input
+                    type="submit"
+                    className="btn"
+                    style={{ flex: '1' }}
+                    value="Submit"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     );
   }

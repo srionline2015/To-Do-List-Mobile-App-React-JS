@@ -13,21 +13,28 @@ class TodoItem extends Component {
   };
 
   render() {
-    const { id, title, date } = this.props.todo;
+    const { id, title, date, showCompleted } = this.props.todo;
+
     return (
-      <div style={this.getStyle()}>
-        <p>
-          <input
-            type="checkbox"
-            onChange={this.props.markComplete.bind(this, id)}
-          />{' '}
-          {title}
+      <>
+        <th scope="row">
+          <div class="form-check">
+            if(!showCompleted)
+            {
+              <input
+                type="checkbox"
+                onChange={this.props.markComplete.bind(this, id)}
+              />
+            }
+            else
+            {}
+          </div>
+        </th>
+        <td>{title}</td>
+        <td>
           <span style={spanStyle}>{date}</span>
-          {/* <button style={btnStyle} onClick={this.props.delTodo.bind(this, id)}>
-            x
-          </button> */}
-        </p>
-      </div>
+        </td>
+      </>
     );
   }
 }

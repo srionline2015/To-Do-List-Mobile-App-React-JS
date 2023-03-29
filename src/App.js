@@ -81,25 +81,34 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <Header />
-          <AddTodo addTodo={this.addTodo} />
-          <Todos
-            todos={this.state.todos}
-            markComplete={this.markComplete}
-            delTodo={this.delTodo}
-            showCompleted={false}
-          />
-          <h5>COMPLETED</h5>
-          <Todos
-            todos={this.state.todos}
-            markComplete={this.markComplete}
-            delTodo={this.delTodo}
-            showCompleted={true}
-          />
+      <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card" id="list1">
+                <div class="card-body py-4 px-4 px-md-5">
+                  <Header />
+                  <AddTodo addTodo={this.addTodo} />
+                  <hr class="my-4" />
+                  <Todos
+                    todos={this.state.todos}
+                    markComplete={this.markComplete}
+                    delTodo={this.delTodo}
+                    showCompleted={false}
+                  />
+                  <h5>COMPLETED</h5>
+                  <Todos
+                    todos={this.state.todos}
+                    markComplete={this.markComplete}
+                    delTodo={this.delTodo}
+                    showCompleted={true}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
