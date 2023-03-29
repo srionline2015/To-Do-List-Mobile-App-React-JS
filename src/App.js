@@ -9,18 +9,39 @@ class App extends Component {
     todos: [
       {
         id: 1,
-        title: 'Go food shopping',
+        title: 'Pick up mail',
+        date: '29/03/2023',
         completed: false,
       },
       {
         id: 2,
-        title: 'Dinner party',
+        title: 'Buy cat food',
+        date: '29/03/2023',
         completed: false,
       },
       {
         id: 3,
-        title: 'Hit the gym',
+        title: 'Get gift for grandma',
+        date: '29/03/2023',
         completed: false,
+      },
+      {
+        id: 4,
+        title: 'Doctor appointment',
+        date: '29/03/2023',
+        completed: false,
+      },
+      {
+        id: 5,
+        title: 'Renew registration',
+        date: '29/03/2023',
+        completed: true,
+      },
+      {
+        id: 6,
+        title: 'HIIT workout',
+        date: '29/03/2023',
+        completed: true,
       },
     ],
   };
@@ -47,10 +68,12 @@ class App extends Component {
     return num;
   }
 
-  addTodo = (title) => {
+  addTodo = (title, date) => {
     const newTodo = {
       id: this.randomNum(),
       title: title,
+      date,
+      date,
       completed: false,
     };
     this.setState({ todos: [...this.state.todos, newTodo] });
@@ -59,13 +82,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="container">          
+        <div className="container">
           <Header />
           <AddTodo addTodo={this.addTodo} />
           <Todos
             todos={this.state.todos}
             markComplete={this.markComplete}
             delTodo={this.delTodo}
+            showCompleted={false}
+          />
+          <h5>COMPLETED</h5>
+          <Todos
+            todos={this.state.todos}
+            markComplete={this.markComplete}
+            delTodo={this.delTodo}
+            showCompleted={true}
           />
         </div>
       </div>

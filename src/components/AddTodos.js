@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 export class AddTodo extends Component {
   state = {
     title: '',
+    date: ''
   };
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.addTodo(this.state.title);
-    this.setState({ title: '' });
+    this.props.addTodo(this.state.title, this.state.date);
+    this.setState({ title: '', date: '' });
   };
 
   render() {
@@ -24,6 +25,14 @@ export class AddTodo extends Component {
           style={{ flex: '10', padding: '5px' }}
           placeholder="Add Todo ..."
           value={this.state.title}
+          onChange={this.onChange}
+        />
+        <input
+          type="date"
+          name="date"
+          style={{ flex: '10', padding: '5px' }}
+          placeholder="Add Date ..."
+          value={this.state.date}
           onChange={this.onChange}
         />
         <input

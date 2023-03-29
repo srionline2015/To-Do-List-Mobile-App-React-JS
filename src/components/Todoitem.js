@@ -13,7 +13,7 @@ class TodoItem extends Component {
   };
 
   render() {
-    const { id, title } = this.props.todo;
+    const { id, title, date } = this.props.todo;
     return (
       <div style={this.getStyle()}>
         <p>
@@ -22,9 +22,10 @@ class TodoItem extends Component {
             onChange={this.props.markComplete.bind(this, id)}
           />{' '}
           {title}
-          <button style={btnStyle} onClick={this.props.delTodo.bind(this, id)}>
+          <span style={spanStyle}>{date}</span>
+          {/* <button style={btnStyle} onClick={this.props.delTodo.bind(this, id)}>
             x
-          </button>
+          </button> */}
         </p>
       </div>
     );
@@ -36,6 +37,16 @@ TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
 };
 
+const spanStyle = {
+  color: '#111',
+  border: 'none',
+  padding: '3px 8px 5px 8px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  float: 'right',
+  outline: 'none',
+};
+
 const btnStyle = {
   background: '#ff0000',
   color: '#fff',
@@ -43,7 +54,6 @@ const btnStyle = {
   padding: '3px 8px 5px 8px',
   borderRadius: '50%',
   cursor: 'pointer',
-  float: 'right',
   outline: 'none',
 };
 
