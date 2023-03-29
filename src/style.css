@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+.website {
+  font: normal 14px sans-serif;
+  letter-spacing: 0.5px;
+  display: block;
+  cursor: pointer;
+  background-color: #313b3f;
+  color: #d9a74a;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+.container {
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+a {
+  color: #313b3f;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #313b3f;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #313b3f;
+}
