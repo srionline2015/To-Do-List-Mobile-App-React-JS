@@ -73,7 +73,6 @@ class App extends Component {
       id: this.randomNum(),
       title: title,
       date,
-      date,
       completed: false,
     };
     this.setState({ todos: [...this.state.todos, newTodo] });

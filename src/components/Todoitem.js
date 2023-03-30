@@ -8,26 +8,27 @@ class TodoItem extends Component {
       padding: '10px',
       margin: '0 10px',
       borderBottom: '1px #ccc dotted',
-      textDecoration: this.props.todo.completed ? 'line-through' : 'none',
+      textDecoration: this.props.todo.markComplete ? 'line-through' : 'none',
     };
   };
 
   render() {
-    const { id, title, date, showCompleted } = this.props.todo;
-
+    const { id, title, date, completed } = this.props.todo;
+    console.log(completed);
     return (
       <>
         <th scope="row">
           <div class="form-check">
-            if(!showCompleted)
-            {
+            {!completed ? (
               <input
                 type="checkbox"
                 onChange={this.props.markComplete.bind(this, id)}
               />
-            }
-            else
-            {}
+            ) : (
+              <input type="checkbox" checked
+              onChange={this.props.markComplete.bind(this, id)}
+              />
+            )}
           </div>
         </th>
         <td>{title}</td>

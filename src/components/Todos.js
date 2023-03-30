@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class Todos extends Component {
   render() {
     let completed = this.props.showCompleted;
+    const { id, title, date } = this.props.todos;
 
     return (
       <>
